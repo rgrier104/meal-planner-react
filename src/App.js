@@ -1,16 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import { connect } from 'react-redux';
+import { fetchRecipes } from './actions/fetchRecipes';
 import './App.css';
 
 class App extends React.Component {
+  
   render() {
     return (
       <div className="App">
-
+        Meal Planner
       </div>
     );
   }
 
 }
 
-export default App;
+export default connect(mapStateToProps, {fetchRecipes})(App);
