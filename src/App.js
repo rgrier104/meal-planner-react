@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchRecipes } from './actions/fetchRecipes';
+import Recipes from './components/Recipes';
 import './App.css';
 
 class App extends React.Component {
@@ -12,7 +13,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        Meal Planner
+        <h1>Meal Planner</h1>
+          <Recipes />
       </div>
     );
   }
