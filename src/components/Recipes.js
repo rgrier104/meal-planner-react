@@ -9,7 +9,7 @@ const Recipes = () => {
 
         <div>
             <ul>
-                {recipes.map(recipe => <li key="recipe.id">{recipe.name}</li>)}
+                {recipes.map(recipe => <li key={recipe.id}>{recipe.name}</li>)}
             </ul>
         </div>
     )
