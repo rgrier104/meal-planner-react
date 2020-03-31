@@ -3,13 +3,13 @@ import { useSelector } from 'react-redux';
 
 const Recipes = () => {
 
-    const recipes = useSelector(state => state.recipes)
-
+    const recipes = useSelector(state => state.recipesReducer.recipes)
+    
     return (
 
         <div>
             <ul>
-                {recipes.map(recipe => <li key={recipe.id}>{recipe.name}</li>)}
+                {recipes.map((recipe, i) => <li key={i}>{recipe.name}</li>)}
             </ul>
         </div>
     )
