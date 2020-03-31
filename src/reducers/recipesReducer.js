@@ -1,4 +1,4 @@
-export default function reducer(state = { recipes: [] }, action) {
+export default function recipesReducer(state = { recipes: [] }, action) {
 
     switch (action.type) {
         case 'FETCH_RECIPES':
