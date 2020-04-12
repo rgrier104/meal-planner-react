@@ -9,16 +9,22 @@ const MealCard = ({ meal }) => {
     const closeModal = () => setShow(false);
 
     // Add recipe to meal card - probably change to useSelector to connect with Redux store after backend is connected
-    const [recipe, setRecipe] = useState("")
+    const [recipeName, setRecipeName] = useState("")
+    const [recipeUrl, setRecipeUrl] = useState("")
+
+    function handleChange(newName, newUrl) {
+        setRecipeName(newName);
+        setRecipeUrl(newUrl);
+    }
 
     return (
         <div>
-            {recipe ? (
-                <a href="" target="_blank">{recipe.name}</a>
+            {recipeName ? (
+                <a href={recipeUrl} target="_blank" rel="noopener noreferrer">{recipeName}</a>
             ) : (
                 <Fragment>
                     <button onClick={openModal}>Select {meal}</button>
-                    <Modal show={show} closeModal={closeModal} meal={meal} setRecipe={setRecipe} />
+                    <Modal show={show} closeModal={closeModal} meal={meal} handleChange={handleChange} />
                 </Fragment>
             )}
         </div>
