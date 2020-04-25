@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { fetchMealPlans } from '../actions/fetchMealPlans';
 
 const OldMealPlans = () => {
@@ -14,7 +15,11 @@ const OldMealPlans = () => {
    
     return (
         <div>
-            {meal_plans.map(meal_plan => <li key={meal_plan.id}>{meal_plan.name},{meal_plan.notes}</li>)}
+            {meal_plans.map(meal_plan =>
+                <NavLink to={`/meal_plans/${meal_plan.id}`} exact key={meal_plan.id}>
+                    <li key={meal_plan.id}>{meal_plan.name},{meal_plan.notes}</li>
+                </NavLink>
+            )}
         </div>
     )
 }
